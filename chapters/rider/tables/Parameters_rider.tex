@@ -1,0 +1,24 @@
+\begin{table}[!htbp] 
+\centering
+\caption{Time- and frequency-domain parameters}% Add 'table' caption
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{m{5cm}m{3cm}ccc}
+\toprule
+&&\multicolumn{3}{c}{\textbf{Number of parameters per dataset}}\\
+\cline{3-5}
+\multicolumn{1}{l}{\textbf{Parameter}} & \multicolumn{1}{l}{\textbf{Based on ...}} &  \multicolumn{1}{l}{\textbf{Sacrum \gls{imu}}} & \multicolumn{1}{l}{\textbf{Limb \gls{imu}}} & \multicolumn{1}{l}{\textbf{Both \gls{imu}s}}\\
+\midrule 
+    
+\multicolumn{1}{l}{Stride, stance, and swing duration}  & \multicolumn{1}{l}{Sacrum or limb \gls{imu}s} & 3 & 3 & 3\\
+\multicolumn{1}{l}{Speed}  & \multicolumn{1}{l}{Sacrum or limb \gls{imu}s}  & 1 & 1 & 1\\
+\multicolumn{1}{l}{AROM around the IMU three axes}  & \multicolumn{1}{l}{Sacrum and limb \gls{imu}s}  & 3 & 3 & 6\\
+\multicolumn{1}{l}{LROM along the x- and z-axes of \gls{imu}s}  & \multicolumn{1}{l}{Sacrum and limb \gls{imu}}  & 2 & 2 & 4\\
+\multicolumn{1}{l}{MaxDiff and MinDiff}  & \multicolumn{1}{l}{Sacrum \gls{imu}} & 2&-&2\\
+&\multicolumn{1}{c}{\textbf{Total}}  & \textbf{11}&\textbf{9}&\textbf{16}\\
+        \bottomrule         
+        
+    \label{tab:parameters_rider}
+  \end{tabular}
+  }
+
+\end{table}

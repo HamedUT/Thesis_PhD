@@ -1,0 +1,32 @@
+\begin{table}[!htbp] 
+    \centering
+      \caption{Effect of different machine learning methods on the performance of the models, reported as mean ± standard deviation}% Add 'table' caption
+
+    
+    \resizebox{\linewidth}{!}{% 
+\begin{tabular}{lccccccccc}
+    
+  \toprule
+    
+ & \multicolumn{9}{c}{Datasets and subsets}\\
+\cmidrule(lr){2-10}
+
+     & \multicolumn{3}{c}{Dataset 1} &  \multicolumn{3}{c}{Dataset 2} &  \multicolumn{3}{c}{Dataset 3}\\ [-1\medskipamount]
+     & \multicolumn{3}{c}{(High/low intensity SET)} &  \multicolumn{3}{c}{(High intensity SET)} &  \multicolumn{3}{c}{(Low intensity SET)}\\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+\multicolumn{1}{l}{Method}     & Walk & Trot & Walk+Trot & Walk & Trot & Walk+Trot & Walk & Trot & Walk+Trot\\
+     \hline 
+     \\\\[-5\medskipamount]
+\gls{svm} & 95±2\% & 83±1\% & 82±2\% & 95±2\% & 86±4\% & 80±2\% & 100±0\% & 88±2\% & 83±3\%\\ [0.6 em]
+\gls{knn} & 72±5\% & 71±6\% & 78±4\% & 82±5\% & 70±6\% & 57±8\% & 80±3\% & 73±5\% & 73±4\%\\ [0.6 em]
+Decision tree & 77±4\% & 73±4\% & 81±3\% & 86±2\% & 69±8\% & 71±7\% & 90±2\% & 67±9\% & 75±5\%\\ [0.6 em]
+Naive Bayes & 82±3\% & 70±7\% & 79±4\% & 86±2\% & 78±4\% & 72±7\% & 90±2\% & 70±6\% & 68±8\%\\ [0.6 em]
+Logistic regression & 88±3\% & 78±6\% & 81±2\% & 88±2\% & 78±4\% & 78±5\% & 100±0\% & 70±5\% & 73±4\%\\ [0.1 em]
+
+ \bottomrule
+
+
+
+    \end{tabular}}
+\label{tab:ml_comparison_prepost}
+\end{table}

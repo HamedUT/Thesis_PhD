@@ -1,0 +1,28 @@
+\begin{table}[!htbp] 
+\centering
+\caption{Performance of the models with different input features trained on Sacrum+Limb data during Walk+Trot}% Add 'table' caption
+\resizebox{0.65\linewidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+\textbf{Model} & 
+\textbf{Features} & \textbf{Accuracy}& \textbf{Sensitivity}& \textbf{Specificity}\\
+\midrule 
+    
+Random forest & All     & 97.4\% & 97.2\% & 97.9\%\\
+          & Top ten & 90.9\% & 87.3\% & 98.8\%\\
+\midrule
+Decision tree  & All     & 94.4\% & 93.2\% & 97.0\%\\
+          & Top ten & 84.3\% & 88.8\% & 74.5\%\\
+\midrule
+\gls{lda} & All     & 91.9\% & 88.9\% & 98.4\%\\
+          & Top ten & 88.7\% & 99.2\% & 65.8\%\\
+\midrule
+\gls{svm} & All     & 90.6\% & 92.4\% & 86.7\%\\
+          & Top ten & 87.4\% & 99.3\% & 61.5\%\\
+
+        \bottomrule         
+    \label{tab:rider_compared}
+  \end{tabular}
+  }
+
+\end{table}

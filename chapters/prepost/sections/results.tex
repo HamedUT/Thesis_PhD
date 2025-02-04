@@ -1,0 +1,88 @@
+\section{Results}
+\label{sec:results}
+
+In total, 3976 strides were extracted from the data of all horses. The performance results of the machine learning algorithms are presented in Table \ref{tab:ml_comparison_prepost}. As indicated in the table, the \gls{svm} model outperforms the four other algorithms in all of the subsets. Therefore, for the remainder of this chapter, we focus solely on reporting the results obtained from the \gls{svm} algorithm. The most significant features per subset and classification models performances, and the number of strides per subset are presented in Table \ref{featuresss results} and Table \ref{n_strides}, respectively.
+
+\input{../tables/ML_comparison.tex}
+
+\input{../tables/features_results.tex}
+
+\input{../tables/n_strides.tex}
+
+The comparison of feature values for all horses between the pre-\gls{set} and post-\gls{set} periods is depicted in Figure \ref{walktrot} for the range of motion features, while Figures \ref{walk} and \ref{trot} illustrate these comparisons for spatiotemporal features. Additionally, the changes in feature values from pre-\gls{set} to post-\gls{set} between low-intensity and high-intensity \gls{set} are presented in Figure \ref{prepostlong} for biomechanical parameters and in Figure \ref{prepoststride} for spatiotemporal parameters. Furthermore, Figure \ref{ind_walktrot} provides a more detailed breakdown, illustrating the number of horses falling into specific ranges of increasing or decreasing values for the four significant features. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/prepost/figures/walktrot_HQ.png}
+\caption{Comparison of biomechanical features of all horses between pre-\gls{set} and post-\gls{set} during walk and trot. The vertical axes of all plots represent the range-normalized value. The box represents the interquartile range, while the red line (horizontal line within the box) shows the median value.}
+\label{walktrot}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/prepost/figures/walk_HQ.png}
+\caption{Comparison of speed and stride, stance, and swing duration features of all horses between pre-\gls{set} and post-\gls{set} during walk. The vertical axes of all plots represent the range-normalized value. The box represents the interquartile range, while the red line (horizontal line within the box) shows the median value.}
+\label{walk}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/prepost/figures/trot_HQ.png}
+\caption{Comparison of speed and stride, stance, and swing duration features of all horses between pre-\gls{set} and post-\gls{set} during trot. The vertical axes of all plots represent the range-normalized value. The box represents the interquartile range, while the red line (horizontal line within the box) shows the median value.}
+\label{trot}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.06]{chapters/prepost/figures/long_pp_HQ.png}
+\caption{Comparison of biomechanical features between low and high intensity \gls{set} performers during walk and trot. The box represents the interquartile range, while the red line (horizontal line within the box) shows the median value.}
+\label{prepostlong}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.06]{chapters/prepost/figures/stride_pp_HQ.png}
+\caption{Comparison of stance and swing duration between low and high intensity \gls{set} performers during walk and trot. The box represents the interquartile range, while the red line (horizontal line within the box) shows the median value.}
+\label{prepoststride}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/prepost/figures/ind_walktrot_HQ.png}
+\caption{Number of horses with increased/decreased (in percentage) features values in post-\gls{set} compare to pre-\gls{set}. The vertical axis of all plots represents the range of increase (if positive) or decrease (if negative) of the specified feature value. Each bar represents the number of horses that have an increase or decrease of value within the specified range.}
+\label{ind_walktrot}
+\end{figure}
+
+
+According to Table \ref{featuresss results}, the selected indicators by the feature selection method were mostly gait events durations features, limbs longitudinal displacement, protraction/retraction range of motion, and abduction/adduction range of motion.
+
+Among the selected indicators, the longitudinal displacement of front limbs was presented in all subsets. For simplicity, the features from both front and hind limbs were considered features from "front limbs" and "hind limbs", respectively. None of the upper body extracted features were selected from the poll (head). The angular ranges of motions of the sacrum were selected in five of the nine subsets. The yaw angle and vertical ranges of motions were selected as important fatigue indicators for withers.
+
+The effect of variability metrics for each subset on the model performance is presented in Table \ref{tab:variability_prepost}. Each of the four variability metrics was reported at least in one subset as the better performer in terms of accuracy. Standard deviation was chosen six times, while variance, root mean square, and coefficient of variation performed better each in one subset.
+
+\input{../tables/variability.tex}
+
+The best-performing algorithm was \gls{svm} with a linear kernel and the performance results were presented in Table \ref{featuresss results}. It can be inferred from the Table that the accuracy results of classifying walking strides using the selected walking features (95\% - 100\%) were higher than classifying trot (83\% - 88\%) and Walk+Trot (80\% - 83\%) strides using their selected features. 
+
+In the following sections, a detailed report of Table \ref{featuresss results} and the important indicators per gait and \gls{set} intensity were discussed:
+
+%\subsection{Effect of \gls{set} intensity during walk}
+
+The indicators of fatigue during the walk were dependent on the intensity, except stance duration, as shown in Figure \ref{prepoststride}. In \gls{set} with higher intensity, longitudinal displacement of front limbs, hind limbs protraction/retraction, withers vertical displacement, and sacrum roll angle range of motion were the important indicators, while for the indicators of the lower intensity, we identified longitudinal and mediolateral displacements and adduction/abduction of front limb, protraction/retraction of the hind limb, and withers yaw angle range of motion. Independent of the intensity, stance duration, longitudinal displacement and adduction/abduction of front limbs, and protraction/retraction of hind limbs were the most indicative parameters of fatigue. 
+
+%\subsection{Effect of \gls{set} intensity during trot}
+As depicted in Figure \ref{prepostlong}, the longitudinal displacement of front limbs was important, independent of \gls{set} intensity. However, despite the importance of mediolateral displacement of the front limbs for high-intensity \gls{set}, it was not selected as an important indicator for the low intensity \gls{set}. Instead, the adduction/abduction and retraction/protraction of the hind limb and sacrum yaw angle were important indicators of low intensity \gls{set} response. 
+
+%\subsection{Effect of \gls{set} intensity independent of gait type}
+The selected parameters as important indicators during high intensity \gls{set} were from the front limb only. However, for the low intensity \gls{set}, the roll angle of sacrum and withers were also selected. Longitudinal displacement and adduction/abduction of both front and hind limbs, and sacrum yaw angle range of motion were chosen as significant parameters if the data is analyzed independently of gait type and \gls{set} intensity.
+
+%\subsection{Effect of gait type during higher intensity \gls{set}}
+For higher intensity \gls{set}, the walking, trotting, and Walk+Trot subsets have only the longitudinal displacement of the front limbs in common. The parameters during trot and Walk+Trot were only from front limbs, while parameters extracted from front limbs, hind limbs, sacrum, and withers were important fatigue indicators during walk, in this dataset.
+
+%\subsection{Effect of gait type during lower intensity \gls{set}}
+The selected parameters for low intensity \gls{set} had the same situation as high intensity \gls{set}, there were no common indicators between walking and trotting, except the longitudinal displacement of the front limbs. However, the selected indicators in both walking and trotting included extracted parameters from the hind limb and front limb. The difference between the two gait types was on the upper body, where withers and sacrum yaw angles were selected in walking and trotting, respectively.
+
+%\subsection{Effect of gait type independent of \gls{set} intensity}
+If we do not consider the intensity of \gls{set}, the sacrum roll angle and front and hind limb protraction/retraction were important indicators during trot, while the adduction/abduction of front limbs during walk before and after \gls{set}s was significant. Front limb longitudinal displacement and hind limb protraction/retraction angle were the other indicators of training response on horses during walk, respectively. 
+
+

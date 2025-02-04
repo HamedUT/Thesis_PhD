@@ -1,0 +1,24 @@
+\section{Background and Prior Work}
+\label{sec:background}
+
+There were a few studies focusing on labeling gait-related attributes using wearable sensors. A number of these studies developed models for classifying the equine gait type or equine activities using IMUs mounted on different body locations \cite{articllstm,eerdekens_2020_automatic}. Given that different gaits and activities exhibit different characteristics and motion patterns, it is essential to analyze each of them separately. Therefore, an accurate gait classifier can help label the IMU data without exhaustive manual or observational labeling. 
+
+In a study, the moments of hoof impact on the ground (hoof-on) and hoof lift off from the ground (hoof-off) were estimated using hoof-mounted IMUs \cite{tijssen_2020_automatic}. Automatically estimating hoof-on and hoof-off moments saves time and resources for calculating precise gait spatio-temporal parameters, such as stride duration. 
+
+An automatic lameness detector was modeled using multiple IMUs equipped on horse body \cite{9216873}. Detecting lameness automatically prevents the horse's biomechanical condition from deteriorating without a veterinarian consistently monitoring the health \cite{9216873}. Horse speed within multiple gaits was also estimated by developing a regression model, where extracted time- and frequency-domain parameters from IMUs signals were the model’s inputs \cite{darbandi_2021_using}. Nevertheless, no study attempted to classify/label the ridden/not-ridden status of horses and develop an automatic model. 
+
+Apart from labeling studies, there were a number of studies on the effects of a rider on horse gait using wearable sensors. One study Investigated the rider’s effects on horse gait kinematics during walk on circles using inertial sensors on four limbs, withers, and sacrum \cite{clarkcarter_2014_z}. Two other studies compared the back kinematics differences between ridden and not-ridden trot using five inertial sensors glued on the back (spine) of horses \cite{hayati_2019_analysis,Barrey1999MethodsHorses}. The mentioned studies did not compare rider effects on horse spatio-temporal and kinematics during walk, and limb kinematics during trot. 
+
+The followings are the effects of rider on horse according to the equine literature:
+
+\begin{itemize}
+\item Riding affects pelvis symmetry in straight line and asymmetry in lunge
+\item Stride length shorter and more frequent with added weight (intra-ind). 
+\item Duty factor increased with increased weight (intra-ind). 
+\item Beat and symmetry were not affected by increased weight (intra-ind).
+\item The presence of a rider can alter the degree of lameness; however, its influence cannot be predicted for an individual horse
+\end{itemize}
+
+it is not possible to find out if someone is riding the horse or not. If the system is built on unridden and the horse is ridden, it affects the results and maybe detect the gait pattern as an anomaly.
+
+Considering the lack of a ridden/not-ridden labeling study, and rider effects on a number of important biomechanical and kinematic parameters during walk and trot, in this study, we aimed to fill the following gaps: First, we proposed and compared machine learning algorithms for classifying the extracted signals from body-mounted sensors to ridden/not-ridden. Then, we compared the classification performance between models by training them with different numbers of body-mounted sensors and by testing them using the motion data from different gaits. Finally, we selected the important equine gait parameters affected by riding using state-of-the-art feature selection methods. 

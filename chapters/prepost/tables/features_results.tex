@@ -1,0 +1,42 @@
+ \begin{sidewaystable}[!htbp] 
+    \centering
+      \caption{Features (mean and variability) with highest weight value based on different subsets, the best performing variability and the average performance results of the classification models from leave-one-subject-out cross validation (reported as mean ± standard deviation)}% Add 'table' caption
+
+    
+    \resizebox{\linewidth}{!}{% 
+    \begin{tabular}{p{4.5cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}}
+    
+    \toprule
+    
+
+    \multicolumn{1}{l}{\bf Feature name} & \multicolumn{3}{c}{\bf Dataset 1 (High/low intensity SET)} &  \multicolumn{3}{c}{\bf Dataset 2 (High intensity SET)} &  \multicolumn{3}{c}{\bf Dataset 3 (Low intensity SET)}\\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+     & \bf Walk & \bf Trot & \bf Walk+Trot & \bf Walk & \bf Trot & \bf Walk+Trot & \bf Walk & \bf Trot & \bf Walk+Trot\\
+     \hline
+\bf Gait events durations & Stance & Swing & - & Stance & Swing & - & Stance & Swing & -\\ [0.2 em]
+\bf Speed & -&- &- &- &- &- &- &- &-\\ [0.2 em]   
+\bf MaxDiff &- &- &- &- &- &- &- &- &-\\ [0.2 em]   
+\bf MinDiff &- &- &- &- &- &- &- &- &-\\ [0.2 em]   
+\bf Pro/Ret angle ROM & HL^1 & FL\&HL &- & HL & -& FL & HL & HL & FL\\ [0.2 em]   
+\bf Abd/Add angle ROM & FL^2 &- & FL\&HL &- & & FL & FL & HL &-\\ [0.2 em]   
+\bf Int/Ext angle ROM &- &- &- &- &- &- &- &- &-\\ [0.2 em]   
+\bf Roll angle ROM & -& Sacrum &- & Sacrum & -& -& -& -& Sacrum\\ [0.2 em]   
+\bf Pitch angle ROM &- &- &- &- &- &- &- &- &-\\ [0.2 em]   
+\bf Yaw angle ROM & -&- & Sacrum &- &- &- & Withers & Sacrum &\\ [0.2 em]   
+\bf Longitudinal displacement & FL & FL & FL\&HL & FL & FL & FL & FL & FL & FL\\ [0.2 em]   
+\bf Mediolateral displacement &- &- &- &- & FL &- & FL &- &-\\ [0.2 em]   
+\bf Vertical displacement &- &- &- & Withers &- &- &- &- &-\\ [0.1 em]   
+\hline
+\multicolumn{10}{l}{{Performance results of the models based on the subsets:}}\\[0.2 em]
+\bf Variability metrics & VAR^3 & CV^4 & SD^5 & SD & SD & RMS^6 & SD & SD & SD\\[0.2 em]
+\bf Accuracy (mean±SD) & 95±2\% & 83±1\% & 82±2\% & 95±2\% & 86±4\% & 80±2\% & 100±0\% & 88±2\% & 83±3\%\\ [0.2 em]
+\bf Sensitivity (mean±SD) & 97±3\% & 80±1\% & 80±2\% & 95±2\% & 81±4\% & 78±1\% & 100±0\% & 89±2\% & 85±4\%\\ [0.2 em]
+\bf Specificity (mean±SD) & 93±2\% & 87±2\% & 85±2\% & 95±2\% & 91±5\% & 81±2\% & 100±0\% & 88±2\% & 82±3\%\\ [0.1 em]
+
+ \bottomrule
+ \footnotesize{$^1$ Hind limbs,  $^2$ Front limbs,  $^3$ Variance,  $^4$ Coefficient of variation,  $^5$ Standard deviation,  $^6$ Root mean square}\\
+         %\multicolumn{10}{l}{\footnotesize{^1 Hind \hspace{0.07cm} limbs,\hspace{0.2cm} ^2 Front \hspace{0.07cm} limbs,\hspace{0.2cm} ^3 Variance,\hspace{0.2cm} ^4 Coefficient\hspace{0.07cm} of\hspace{0.07cm} variation,\hspace{0.2cm} ^5 Standard\hspace{0.07cm} deviation,\hspace{0.2cm} ^6 Root\hspace{0.07cm} mean\hspace{0.07cm} square}}\\
+  \end{tabular}}
+    \label{featuresss results}
+
+    \end{sidewaystable}

@@ -1,0 +1,28 @@
+\begin{table}[!htbp] 
+\centering
+\caption{Performance of random forest models per gait}% Add 'table' caption
+\resizebox{0.75\linewidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+\textbf{\gls{imu}} & 
+\textbf{Gait type} & \textbf{Accuracy}& \textbf{Sensitivity}& \textbf{Specificity}\\
+\midrule 
+    
+Sacrum + Limb & Walk + Trot & 97.4\% & 97.2\% & 97.9\%\\
+              & Walk & 96.6\% & 95.3\% & 99.4\%\\
+              & Trot & 98.6\% & 99.9\% & 95.6\%\\
+\midrule
+Sacrum & Walk + Trot & 87.6\% & 87.3\% & 88.4\%\\
+       & Walk & 86.4\% & 84.0\% & 91.4\%\\
+       & Trot & 89.5\% & 92.1\% & 83.7\%\\
+\midrule
+Limb & Walk + Trot & 92.9\% & 97.8\% & 82.4\%\\
+     & Walk & 92.1\% & 97.1\% & 81.4\%\\
+     & Trot & 94.2\% & 98.8\% & 83.9\%\\
+
+        \bottomrule         
+    \label{tab:rider_results}
+  \end{tabular}
+  }
+
+\end{table}

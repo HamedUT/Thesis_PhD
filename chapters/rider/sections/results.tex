@@ -1,0 +1,43 @@
+\section{Results}
+\label{sec:results}
+
+18400 windows were extracted from the data, which resulted in more than 36000 strides. A total of 11,900 windows were labeled, with 7,450 and 4,450 labeled as "ridden" during walk and trot, respectively, while the remaining 3,550 and 2,950 were labeled as "not-ridden" during walk and trot. 
+
+The best and the worst performing models were based on random forest and \gls{svm}, respectively. The performance results of the random forest models per gait were presented in detail in Table \ref{tab:rider_results}, and were compared with other algorithms in Table \ref{tab:rider_compared} (models trained based on sacrum+limb \gls{imu}s and walk+trot gait). For visual comparison, the accuracy results of the random forest models per gait are demonstrated in Figure \ref{fig:rider_three} and compared with other machine learning models in Figure \ref{fig:rider_four}. Furthermore, the accuracy, sensitivity, and specificity of the models resulting from testing on walk+trot data are depicted in Figure \ref{fig:rider_five}. 
+
+\input{../tables/rider_results.tex}
+\input{../tables/rider_compared.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\linewidth]{chapters/rider/figures/Picture3.png}
+\caption{Accuracy of the random forest models per gait}
+\label{fig:rider_three}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\linewidth]{chapters/rider/figures/Picture4.png}
+\caption{Accuracy of the models with different number of input features trained on Sacrum+Limb data during Walk+Trot}
+\label{fig:rider_four}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\linewidth]{chapters/rider/figures/Picture5.png}
+\caption{Accuracy, sensitivity, and specificity of the models based on random forest using Walk+Trot data}
+\label{fig:rider_five}
+\end{figure}
+
+It can be inferred from Table \ref{tab:rider_results} that the model based on Sacrum+Limb \gls{imu}s features yielded the best performance during walk, trot, and Walk+Trot. Between the two other models based on one \gls{imu}, the model based on limb \gls{imu} features performed better than the model based on sacrum \gls{imu} except for the specificity of walking data. Moreover, the performance of the models when using trotting data was slightly higher than walking data.
+
+\input{../tables/rider_features_results.tex}
+
+Using the weights from the output of \gls{nca}, the top ten features were selected and reported in Table \ref{tab:rider_features_results}. In addition, normalized values of the top three features between the two classes were demonstrated in Figure \ref{fig:rider_six}. For model performance comparison based on the number of features, we reported the performance of the models based on the top ten features in Table \ref{tab:rider_features_results}, where five and four features were extracted from limb and sacrum \gls{imu}s, respectively. Out of all the parameters, only one was kinematic, the ninth feature, which represented swing duration. Half of the selected features were directly extracted from the \gls{imu}s raw signals (acceleration and angular velocity). The remaining were calculated from the integration of the raw signals (angle and displacement). 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.75\linewidth]{chapters/rider/figures/Picture6.png}
+\caption{Normalized values (0 to 1) of the top three features (according to \gls{nca}) between the two classes: without rider and with rider}
+\label{fig:rider_six}
+\end{figure}

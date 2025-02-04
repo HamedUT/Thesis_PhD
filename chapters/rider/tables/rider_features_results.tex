@@ -1,0 +1,27 @@
+\begin{table}[!htbp] 
+\centering
+\caption{The ten highest ranked features from \gls{nca}}% Add 'table' caption
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+\textbf{Rank} & 
+\textbf{Feature description} & \textbf{\gls{imu}}& \textbf{Signal}& \textbf{Axis}\\
+\midrule 
+    
+1  & Magnitude of \gls{fft} first coefficient & Sacrum      & Acceleration                  & Along vertical (z-axis)\\
+2  & Angular range of motion                  & Limb        & Angle                         & Around longitudinal (x-axis)\\
+3  & Maximum value                            & Limb        & Angular velocity              & Around protraction angle (z-axis)\\
+4  & Angular range of motion                  & Limb        & Angle                         & Around protraction angle (z-axis)\\
+5  & Angular range of motion                  & Limb        & Angle                         & Around adduction angle (y-axis)\\
+6  & Standard deviation                       & Sacrum      & Angular velocity              & Around longitudinal (x-axis)\\
+7  & Median value                             & Sacrum      & Acceleration                  & Along longitudinal (z-axis)\\
+8  & Linear range of motion                   & Sacrum      & Displacement                  & Along vertical (z-axis)\\
+9  & Swing duration                           & Limb/ & Acceleration/ & -\\[-5pt]
+   &                                          & Sacrum   & Angular velocity              &  \\
+10 & Linear range of motion                   & Limb        & Displacement                  & Along longitudinal (x-axis)\\
+        \bottomrule         
+    \label{tab:rider_features_results}
+  \end{tabular}
+  }
+
+\end{table}

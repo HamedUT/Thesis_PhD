@@ -1,0 +1,48 @@
+\begin{table}[!htbp] 
+    \centering
+      \caption{Effect of different variability metrics on the performance of the models, reported as mean ± standard deviation}% Add 'table' caption
+
+    
+    \resizebox{0.8\linewidth}{!}{% 
+    \begin{tabular}{llcccc}
+    
+    \toprule
+ 
+\multicolumn{1}{l}{\multirow{2}{*}{Datasets}}&\multirow{2}{*}{Subsets} & \multicolumn{4}{c}{Variability Metrics}\\ 
+
+\cline{3-6} 
+
+\multicolumn{1}{l}{}& & VAR^1 & CV^2 & SD^3 & RMS^4 \\ \hline
+
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Dataset 1\\ 
+
+(High/low intensity)\end{tabular}} & Walk & 77±2\% & 82±2\% & 88±2\% & 95±2\%\\[0.4 em]
+
+& Trot& 83±1\% & 73±1\% & 77±1\% & 77±1\% \\[0.4 em]
+
+& Walk+Trot& 70±2\%& 72±2\%& 82±2\%& 80±2\%\\[0.4 em] 
+
+\hline
+
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Dataset 2\\ 
+
+(High intensity)\end{tabular}}& Walk& 82±2\% & 86±2\%& 95±2\%& 88±2\%\\[0.4 em]
+
+& Trot& 80±4\% & 72±4\%& 86±4\%& 80±4\%\\[0.4 em]
+
+& Walk+Trot& 80±2\%   & 72±2\%& 78±2\%& 76±2\% \\[0.4 em] 
+\hline
+
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}Dataset 3\\ 
+
+(Low intensity)\end{tabular}}& Walk& 80±2\%& 80±2\%& 100±0\%& 90±2\%\\
+
+& Trot& 73±2\%& 73±2\%& 88±2\%& 70±2\%\\[0.4 em]
+
+& Walk+Trot& 75±3\%   & 73±3\%& 88±3\%& 83±3\%\\[0.4 em] \bottomrule
+
+\multicolumn{6}{l}{\footnotesize{\textsuperscript{1}\textit{Variance}, \textsuperscript{2}\textit{Coefficient of variation}, \textsuperscript{3}\textit{Standard deviation}, \textsuperscript{4}\textit{Root mean square}}}\\
+
+\end{tabular}}
+\label{tab:variability_prepost}
+\end{table}
