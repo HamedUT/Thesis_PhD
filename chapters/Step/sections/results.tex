@@ -1,0 +1,40 @@
+\section{Results}
+\label{sec:results}
+
+More than 41000 strides have been extracted from the data, which resulted in more than 82000 hoof-on and hoof-off moments for the right front hoof and right hind hoof in total. The number of strides per gait is presented in Table \ref{strides_per_gait}. The estimation errors of the trained models in all gaits are presented in Figure \ref{models_result_fig} (top plot). In addition, the performances of the best performing models for front and hind hoof-on and hoof-off (which were the models based on front limb \gls{imu} and hind limb \gls{imu}) within all gaits are also displayed in Figure \ref{models_result_fig} (the four bottom plots). In Table \ref{results_of_models}, all of the models accuracy results presented in Figure \ref{models_result_fig} were reported in numbers.
+
+\input{../tables/strides_per_gait.tex}
+
+\input{../tables/results_step.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.88\linewidth]{chapters/Step/figures/model_performances_step.png}
+\caption{The Performances of the estimation models. Top: Performance of the models within all gaits per \gls{imu}. Second: Performance (per gait) of the front hoof-on model trained on front-limb \gls{imu}. Third: Performance (per gait) of the front hoof-off model trained on front-limb \gls{imu}. Fourth: Performance (per gait) of the hind hoof-on model trained on hind-limb \gls{imu}. Fifth: Performance (per gait) of the hind hoof-off model trained on hind-limb \gls{imu}. The bars and the error bars indicate the accuracy (mean) and precision (standard deviation) of estimation errors, respectively.}
+\label{models_result_fig}
+\end{figure}
+
+
+It can be inferred from the top plot of Figure \ref{models_result_fig} that the model based on front limb \gls{imu} yielded the best accuracy and precision for both hoof-on and hoof-off, with -0.2 and -0.1 ms accuracy and 9.0 and 6.0 ms precision, respectively. Between upper-body mounted \gls{imu}s, the hoof-on and hoof-off models based on withers \gls{imu} presented lower errors (-0.2 ± 21.0 and -2.8 ± 17.0 ms) than sacrum \gls{imu} for hind hoof-on (-8.7 ± 29.0 ms) and -off (7.9 ± 25.0 ms). A positive and negative value can be defined as an estimation delay and an early estimation of the moment, respectively.
+
+All the models yielded the best performance when W and batch size were 100 and 32, respectively. The tuned value of other hyperparameters, learning rate and dropout rate, were different among the models. The learning rate varied between 0.0001 and 0.0005, while the dropout rate values were 0.2, 0.4, and 0.6. The values of hyperparameters that resulted in highest accuracy for each model were reported in Table \ref{hyperparameters}.
+
+\input{../tables/hyperparameters.tex}
+
+According to the results, the precision increased and decreased respectively as the models (except for the right front limb model) estimated the hoof-on and hoof-off during faster natural gaits, from walk to canter (speed of cantering > speed of trotting > speed of walking). In artificial gaits, both accuracy and precision were lower in piaffe compared to passage. Therefore, we achieved the lowest and highest error during walk and passage, respectively.
+
+Figure \ref{literature_compare_fig} demonstrated and Table \ref{literature_compare_} reported the performance results of the current study models in comparison to the results of the state-of-the-art methods \cite{adsd1,sapone_2020_comparison}. Although the method was only based on front and hind limbs \gls{imu}s (as the input), models based on withers and sacrum \gls{imu}s were also presented for comparison (based on the output \gls{imu}s) of models performances in terms of \gls{imu} placement on the body.
+
+
+
+
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/Step/figures/Studies_step.png}
+\caption{The comparison between estimation models of the current study and the literature. The bars and the error bars indicate the accuracy (mean) and precision (standard deviation) of the estimation models, respectively.}
+\label{literature_compare_fig}
+\end{figure}
+
+\input{../tables/literature_compare.tex}

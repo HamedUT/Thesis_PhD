@@ -1,0 +1,22 @@
+\begin{table}[!htbp] 
+    \centering
+    \caption{Number of strides per gait}% Add 'table' caption
+    \resizebox{0.8\linewidth}{!}{%
+    \begin{tabular}{lcccc}
+    \toprule
+ \textbf{Input \gls{imu}} & \textbf{Output \gls{imu}} & \textbf{Hoof-on/off} & \textbf{Learning rate} & \textbf{Dropout rate}  \\
+\midrule
+Right front limb & Front hoof  & Hoof-on & 0.0001 & 0.6\\
+ &  & Hoof-off & 0.0005 & 0.4\\
+Withers & Front hoof  & Hoof-on & 0.0001 & 0.4\\
+ &   & Hoof-off & 0.0005 & 0.4\\
+Right hind limb & Hind hoof  & Hoof-on & 0.0001 & 0.6\\
+ &  & Hoof-off & 0.0005 & 0.4\\
+ Sacrum & Hind hoof  & Hoof-on & 0.0005 & 0.2\\
+ &  & Hoof-off & 0.0005 & 0.4\\
+
+
+\bottomrule
+ \label{hyperparameters}
+\end{tabular}}
+\end{table}
