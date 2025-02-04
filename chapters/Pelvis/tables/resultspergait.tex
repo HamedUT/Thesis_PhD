@@ -1,0 +1,39 @@
+\begin{table}[!htbp] 
+    \centering
+    \caption{Accuracy and differences of the methods and the measurement devices outputs using \gls{rmse}. On each row, it is indicated that the \gls{rmse} presents the difference between the methods or measurement devices}% Add 'table' caption
+
+    
+    \resizebox{0.8\linewidth}{!}{% 
+    
+    \begin{tabular}{p{1cm}p{3cm}p{3.5cm}c}
+    
+    \midrule
+    
+
+     Gait &  Methods & Measurement devices & \gls{rmse} (degree) \\
+     
+
+
+        \midrule
+        
+Walk & Roll and Inverse sine &  \gls{imu} & 2.09\\[0.4 em]
+    
+Walk & Roll and Inverse sine &  \gls{omc} & 1.57\\[0.4 em]
+
+Walk & Roll &  \gls{imu} and \gls{omc} & 0.33\\[0.4 em]
+
+Walk & Inverse sine &  \gls{imu} and \gls{omc} & 0.28\\[0.4 em]
+
+Trot & Roll and Inverse sine &  \gls{imu} & 3.59\\[0.4 em]
+    
+Trot & Roll and Inverse sine &  \gls{omc} & 3.55\\[0.4 em]
+
+Trot & Roll &  \gls{imu} and \gls{omc} & 0.67\\[0.4 em]
+
+Trot & Inverse sine &  \gls{imu} and \gls{omc} & 0.43\\[0.4 em]
+    
+        \bottomrule
+    \end{tabular}}
+        
+    \label{pelvis:resultsperrgait}
+    \end{table}
