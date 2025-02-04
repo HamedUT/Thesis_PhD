@@ -1,0 +1,33 @@
+\section{Discussion}
+\label{sec:discussion}
+
+This chapter proposed a data-driven method to evaluate the exercise-induced fatigue of sport horses by estimating the \gls{lac} non-invasively using data from wearable sensors. It is important to emphasize that the proposed model is participant-independent, meaning it can generalize well to new eventing and endurance horses with a similar level of fitness and competition. 
+
+Estimating the \gls{lac} during exercise provides riders and trainers with the capability to monitor the fatigue level of the horse, helping them make informed decisions about whether to continue or halt the exercise to prevent potential injuries or overtraining. Furthermore, during a \gls{set}, they can seamlessly record important performance measures, such as speed and \gls{hr} at the point when \gls{lac} reaches a specific threshold \cite{456}. The most accurate model in this study yielded an \gls{rmse} of 0.11 \gls{mmol/L}, which was biologically significant and precise for the \gls{lac} measurements around the range of \gls{lac} in this study, 4 \gls{mmol/L}.
+
+\subsection{Effect of Training Datasets on the Model Performance}
+
+According to Table \ref{results_fatigue_chap}, the models based on sacrum \gls{imu} demonstrated higher accuracy and lower relative error compared to the models based on limb \gls{imu}, independent of the machine learning technique. This suggests that sacrum \gls{imu} captured and conveyed more fatigue-related information than limb \gls{imu}. It's worth noting that the difference might also arise from the disparity in the number of input features between limb \gls{imu} and sacrum \gls{imu} models, which was approximately twice as many in the latter case. As explained in the Methods, limb \gls{imu} acceleration signals were excluded due to exceeding the specified threshold in \gls{imu} initial settings.
+
+As anticipated, the performance of the models improved as the number of input features increased, following the pattern: limb \gls{imu} < sacrum \gls{imu} < both-\gls{imu}s < \gls{imu}+\gls{hr}. Specifically, the addition of \gls{hr} to the training dataset resulted in an improvement in accuracy by 0.11 \gls{mmol/L} and a reduction in relative error by 3.83\% (\gls{cnn} model). However, there was a noteworthy exception: the models trained solely on the \gls{hr} feature dataset outperformed \gls{imu}-based training datasets within decision tree and neural networks. The reason might be attributed to the incorporation of \gls{hr} data into the output. Despite \gls{hr} not playing a direct role in $LA_g$ calculation and considering that \gls{lac} was fitted to an exponential curve in relation to \gls{hr}, there could be resemblances in their patterns. Furthermore, employing only two \gls{imu} devices on the horse body for $LA_g$ estimation results in better accuracy (random forest model: 0.24 \gls{mmol/L}) compared to using only an \gls{hr} monitor (random forest model: 0.38 \gls{mmol/L}).
+
+\subsection{Comparison of Machine Learning Algorithms}
+
+\gls{cnn}, \gls{lstm}, and random forest models yielded superior results compared to decision tree and neural networks. The disparity in accuracy among models based on \gls{imu}+\gls{hr} training dataset was more pronounced in the case of \gls{cnn} and \gls{lstm} (0.11 and 0.12), as opposed to random forest where it was only 0.05 \gls{mmol/L}. However, the accuracy of models that relied solely on \gls{imu} data demonstrated similar performance across these three algorithms. This observation may stem from the increased complexity when handling two distinct data types, motion and physiological data, by \gls{lstm} and \gls{cnn}. Conversely, random forest exhibits lower computational complexity compared to the deep learning models. This aspect emphasizes the utility of random forest over \gls{cnn} and \gls{lstm} in scenarios with constrained resources and the absence of an \gls{hr} monitor. 
+
+\subsection{The Most Relevant Features for \gls{lac} Estimation}
+
+Spectral energy has been selected three times as one of the top ten relevant features (Table \ref{results_features_fatigue_chap}). Changes in the spectral energy distribution can indicate the presence of abnormal patterns in the signal. The spectral energy of pelvis roll angular velocity can be used as an indicator for pelvis roll angle, which has also been utilized as a metric for lameness \cite{Jiang2021-cd}. A similar approach could also be utilized for the second-ranked feature, where the changes in limb protraction/retraction angle, has been selected as one of the most indicative parameters in a recent equine fatigue study \cite{Ishii2013-mp}. Therefore, the selection of these parameters as stated in the literature as performance deterioration factors might also validate their relevance to fatigue.
+
+The inclusion of limb \gls{arom}s for protraction/retraction and abduction/adduction among the top features substantiates the findings of \cite{Ishii2013-mp}, which indicated significant fatigue-related associations for both parameters. Furthermore, standard deviation was selected as the ninth top relevant feature, meeting our expectations as an important variability parameter for \gls{imu} signals in fatigue assessment \cite{Ishii2013-mp}.
+
+The stride regularity extracted from the sacrum acceleration signal was ranked higher than that from the limb's angular velocity signal. This observation supports the validity of the stride regularity calculation method documented in the literature \cite{Bryce2012-jl}, where the sacrum acceleration signal was employed.
+
+
+\subsection{Testing The Model on The Data From Endurance Horses}
+The accuracy of the models decreased when tested on data from endurance horses. This decrease was expected due to the differences in locomotion patterns between these two distinct disciplines. Eventers primarily focus on jumping and mastering uneven terrain skills, while endurance horses participate in long-distance races. Furthermore, the wide range of the standard deviation of estimation percentage errors can be attributed to the limited number of subjects available for testing.
+
+
+
+
+

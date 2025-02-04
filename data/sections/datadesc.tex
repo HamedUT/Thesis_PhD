@@ -1,0 +1,9 @@
+\section{Data Description}
+\label{sec:datadesc}
+
+
+Each file represents the data collected from a horse indicated by horse identifiers (Table \ref{IMU info on horses}) as the file name (with an extension of .mat). \gls{imu}s are presented in structures within the files. Therefore, each structure is representative of one \gls{imu}. The collected data from \gls{imu}s were organized in structures as columns. The columns are described in Table \ref{columns} and are recognizable by an assigned name (column name) on the first row. 
+  
+\input{chapters/data/tables/columns}
+
+The first column is the timestamp, the second, third, and fourth columns are the x, y, and z-axis (local/\gls{imu} axis, Figure \ref{IMUaxes}) of acceleration signals, the fifth, sixth, and seventh columns contain x, y, and z-axis (local/\gls{imu} axis) of angular velocity signals. 

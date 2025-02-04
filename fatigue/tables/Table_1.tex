@@ -1,0 +1,26 @@
+\begin{table}[!htbp]
+    \centering
+    \caption{Signal-based and kinematic parameters}
+    \resizebox{0.85\linewidth}{!}{% 
+    \begin{tabular}{lccc}
+    \toprule
+        \textbf{Parameter description} & \multicolumn{3}{c}{\textbf{Extracted from}} \\ \cline{2-4}
+        ~ & \textbf{Sacrum} & \textbf{Limb} & \textbf{Both} \\ \hline
+        Signal-based features & ~ & ~ & ~ \\ \hline
+        Maximum, Minimum, Mean, Median & 24 & 12 & 36 \\ \hline
+        Standard deviation, First and third quartiles & 18 & 9 & 27 \\ \hline
+        Detrended Fluctuation Analysis \cite{Bryce2012-jl} & 6 & 3 & 9 \\ \hline
+        Spectral energy \cite{darbandi_2021_using}  & 6 & 3 & 9 \\ \hline
+        Magnitude of the first three coefficients of FFT & 6 & 3 & 9 \\ \hline
+        Stride regularity based on sacrum IMU \cite{Biau2004-mn} & 1 & - & 1 \\ \hline
+        Stride regularity based on limb IMU & - & 1 & - \\ \hline
+        Kinematic parameters & ~ & ~ & ~ \\ \hline
+        Stride duration, stance, and swing duration, Speed & 4 & 4 & 8 \\ \hline
+        Normalized Stride-Efficiency Factor (NSEF) & 1 & 1 & 2 \\ \hline
+        Limb AROM & - & 3 & 3 \\ \hline
+        Sacrum AROM and LROM, MaxDiff, MinDiff & 7 & - & 7 \\ \hline
+        \textbf{Total} & \textbf{73} & \textbf{39} & \textbf{112} \\ \bottomrule
+        
+    \end{tabular}}
+    \label{features_fatigue_chap}
+\end{table}
