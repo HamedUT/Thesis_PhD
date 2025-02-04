@@ -1,0 +1,35 @@
+\begin{table}[!htbp] 
+    \centering
+    \caption{Performance of model (based on ``All'' feature set, random forest method, and 256 timesteps windows) per gait type.}% Add 'table' caption
+\resizebox{0.75\linewidth}{!}{
+       \begin{tabular}[H]{lccc}
+        \toprule
+    
+    \multicolumn{1}{l}{\textbf{Gait}} & \multicolumn{1}{c}{\textbf{Measured speed} (\boldmath{\(\frac{m}{s}\)})}  & \multicolumn{2}{c}{\textbf{Predicted Speed Error}}\\
+    
+    \cmidrule(lr){2-2} \cmidrule(lr){3-4}
+    
+     & \multicolumn{1}{c}{{Mean ($\pm$ Standard deviation)}}  &\multicolumn{1}{c}{\textbf{\gls{rmse}} (\boldmath{\(\frac{m}{s}\)})} & \multicolumn{1}{c}{\textbf{Normalized \gls{rmse}}} \\
+     
+
+
+        \midrule
+        
+\multicolumn{1}{l}{All} & \multicolumn{1}{c}{3.25 ($\pm 1.63$)} &   \multicolumn{1}{c}{0.25} & \multicolumn{1}{c}{7.69\%}\\[0.4 em]
+    
+\multicolumn{1}{l}{Walk} & \multicolumn{1}{c}{1.70 ($\pm 0.17$)}  & \multicolumn{1}{c}{0.20} & \multicolumn{1}{c}{11.76\%}\\[0.4 em]
+    
+\multicolumn{1}{l}{Trot} & \multicolumn{1}{c}{3.30 ($\pm 0.23$)} &  \multicolumn{1}{c}{0.31} & \multicolumn{1}{c}{10.03\%}\\[0.4 em]
+    
+\multicolumn{1}{l}{Tölt} & \multicolumn{1}{c}{3.90 ($\pm 0.23$)} & \multicolumn{1}{c}{0.28} & \multicolumn{1}{c}{7.18\%}\\  [0.4 em]
+
+\multicolumn{1}{l}{Canter}& \multicolumn{1}{c}{4.95 ($\pm 0.43$)} & \multicolumn{1}{c}{0.34} & \multicolumn{1}{c}{6.87\%}\\ [0.4 em]
+    
+\multicolumn{1}{l}{Pace}& \multicolumn{1}{c}{7.52 ($\pm 1.43$)} & \multicolumn{1}{c}{0.31} & \multicolumn{1}{c}{4.12\%}\\ 
+
+
+    
+        \bottomrule
+    \end{tabular}}
+    \label{resultsperrgait}
+\end{table}

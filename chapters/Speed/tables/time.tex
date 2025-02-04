@@ -1,0 +1,31 @@
+\begin{table}[htb] 
+    \centering
+    \caption{The smartphone execution time between models and feature sets. The time results are in milliseconds.}% Add 'table' caption
+\resizebox{\linewidth}{!}{%
+       \begin{tabular}[H]{p{3cm}m{2cm}m{2cm}m{2cm}m{2cm}m{2cm}m{2cm}}
+    
+    \toprule
+    
+    
+
+ \multicolumn{1}{l}{\textbf{Feature set}} & \multicolumn{1}{l}{\textbf{Number of features}} &  \multicolumn{1}{c}{\textbf{\gls{svm}}} & \multicolumn{1}{c}{\textbf{Decision tree}} & \multicolumn{1}{c}{\textbf{Random forest}} & \multicolumn{1}{c}{\textbf{\gls{gbt}}} & \multicolumn{1}{c}{\textbf{\gls{gpr}}}\\
+  
+  \midrule
+  
+      \multicolumn{1}{l}{All} &\multicolumn{1}{c}{672} &  \multicolumn{1}{c}{777.81} & \multicolumn{1}{c}{< 0.01} & \multicolumn{1}{c}{44.13} & \multicolumn{1}{c}{0.10} & \multicolumn{1}{c}{1207.34}\\
+    
+     
+    
+    
+    \multicolumn{1}{l}{Sacrum/Right front limb} &\multicolumn{1}{c}{192} & \multicolumn{1}{c}{279.99} &  \multicolumn{1}{c}{< 0.01} &  \multicolumn{1}{c}{33.71} &  \multicolumn{1}{c}{0.09} &  \multicolumn{1}{c}{431.18} \\
+
+    \multicolumn{1}{l}{Right hind limb} &\multicolumn{1}{c}{96} & \multicolumn{1}{c}{172.45} &  \multicolumn{1}{c}{< 0.01} & \multicolumn{1}{c}{34.28} & \multicolumn{1}{c}{0.08} &  \multicolumn{1}{c}{240.14}\\ 
+    
+     
+    \multicolumn{1}{l}{Top 6 features} &\multicolumn{1}{c}{6} & \multicolumn{1}{c}{22.15} &  \multicolumn{1}{c}{< 0.01} & \multicolumn{1}{c}{36.63}  & \multicolumn{1}{c}{0.08}  & \multicolumn{1}{c}{28.97}\\
+    
+       \bottomrule
+    \end{tabular}}\\
+      
+    \label{speedmodeltimes}
+\end{table}

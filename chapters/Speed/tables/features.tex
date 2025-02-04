@@ -1,0 +1,47 @@
+\begin{table}[!htbp] 
+    \centering
+    \caption{Time- and frequency-domain features.}% Add 'table' caption
+    \resizebox{\linewidth}{!}{%
+    \begin{tabular}{m{7cm}m{7.5cm}}
+    \toprule
+    \multicolumn{1}{l}{\textbf{Time-Domain Feature}} & 
+    \multicolumn{1}{c}{\textbf{Equation}} \\
+    \midrule 
+    
+        \multicolumn{1}{l}{Maximum}  & \multicolumn{1}{c}{\textit{max = Maximum value of the window}} \\
+        \multicolumn{1}{l}{Minimum}  & \multicolumn{1}{c}{\textit{min = Minimum value of the window}} \\
+        Mean (${\bar {x}}$) & \[mean = \frac{1}{N} \sum_{n=1}^{N}x_n\] \\
+        
+        \multicolumn{1}{l}{Median}  & \multicolumn{1}{c}{\textit{mdn = Median value of the window}} \\
+        
+        Standard deviation ($\sigma$) & \[sd = \frac{1}{N-1} \sum_{n=1}^{N}(x_n-{\bar {x}})^{2}\] \\
+        
+        \multicolumn{1}{l}{First quartile}  & \multicolumn{1}{c}{\textit{p25 = 25th percentile of the window}} \\
+        \multicolumn{1}{l}{Third quartile}  & \multicolumn{1}{c}{\textit{p75 = 75th percentile of the window}} \\
+        
+        Kurtosis & \[krt = \frac{1}{N} \sum_{n=1}^{N}\big(\frac{x_n-{\bar {x}}}{\sigma}\big)^{4}\] \\
+        
+        Skewness & \[skw = \frac{1}{N} \sum_{n=1}^{N}\big(\frac{x_n-{\bar {x}}}{\sigma}\big)^{3}\] \\
+        
+    
+    \multicolumn{1}{l}{\textbf{Frequency-domain Feature}} & \\
+    \midrule \\ [-4 em]
+        
+        Spectral entropy & \[ent = -\sum_{n=1}^N\bigg(\frac{|x(\omega_i)|^2}{\sum_{n=1}^N|x(\omega_i)|^2} \times\ln{\frac{|x(\omega_i)|^2}{\sum_{n=1}^N|x(\omega)|^2}\bigg)}\] \\
+        
+        Spectral energy & \[enrg = \sum_{n=1}^N|x(\omega)|^2\] \\
+        
+        Magnitude of Fourier transform 1st six coefficients & \[FFT_{k=1,2,...,6} = Magnitude\bigg(\sum_{n=0}^{N-1}x_n e^{-j(\frac{2\pi}{N})kn}\bigg)\]\\
+        
+        Phase angle of Fourier transform 1st six coefficients & \[ANG_{k=1,2,...,6} = arctan\Bigg(\cfrac{\displaystyle\sum\limits_{n=0}^{N-1}x_n sin{(\cfrac{2\pi}{N})kn}}{\displaystyle\sum\limits_{n=0}^{N-1}x_n cos{(\cfrac{2\pi}{N})kn}}\Bigg)\]\\
+
+            
+        \bottomrule 
+        
+
+    \label{tab:features}
+  \end{tabular}
+  }
+
+\footnotesize $N =$ {Window size,} \, $x_n \in$ {Window,} \, $\omega = \sum_{n=0}^{N-1}x_n e^{-j(\frac{2\pi}{N})(N-1)n}$
+\end{table}

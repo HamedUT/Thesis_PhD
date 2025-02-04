@@ -1,0 +1,57 @@
+\section{Results}
+\label{sec:results}
+
+Approximately 130,000 speed datapoints or 26,000 seconds have been extracted from the dataset. The estimation performances of the trained models are presented in Figure \ref{resultsallF} and Table \ref{resultsallT}. The range of accuracy parameters were 0.14--0.36 m/s for \gls{mae} and 0.25--0.58 m/s for \gls{rmse}. The performance results of feature sets and methods are compared in the following sections.
+
+\input{../tables/resultsallT.tex}
+
+\subsection{\gls{gps} Validation Study}
+A total of 450 speed values (range between 1.5 to 7.5 m/s) were collected using the \gls{gps} sensor. According to Table \ref{gps_1}, in the higher speeds, the error is higher as well. In contrast, the percentage of mean absolute error is lower in fast speed. 
+
+\input{../tables/gps_1.tex}
+
+\subsection{Comparison of Features, Algorithms, and Gaits}
+%\subsection{Comparison of Selected Features}
+According to Table \ref{tablefeature}, the first-ranked feature of upper body feature sets (sacrum, withers, poll, and Sacrum/Withers) was extracted from the z-axis of the accelerometer signal. The second-ranked feature was also from acceleration signals, which were derived from the x and z axes. For the limb feature sets, the z-axis of the angular velocity signal ranked the highest. Moreover, the second-ranked feature for both front limbs feature sets was obtained from the x-axis of the acceleration signal, while for both hind limbs and Limbs feature sets were selected from the z-axis of the gyroscope output. Furthermore, all the selected features of the limbs feature set were from the z-axis of angular velocity. 
+
+\input{../tables/tablefeature.tex}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{chapters/Speed/figures/20201029.png}
+\caption{Comparison of models performances using MAE(m/s) and \gls{rmse}(m/s).}
+\label{resultsallF}
+\end{figure}
+
+%\subsection{Comparison of Feature Sets}
+ It can be inferred from Figure \ref{resultsallF} and Table \ref{resultsallT} that All feature sets provided the best performance (\gls{rmse} = 0.25--0.33 m/s). In addition, the feature sets from both hind limbs IMU signals were labeled as the lowest \gls{rmse} and \gls{mae} among the individual IMU feature sets in estimating the speed (\gls{rmse} = 0.28 and \gls{mae} = 0.16 m/s). It should be noted that the accuracy of models except the model trained with poll features (\gls{rmse} = 0.45--0.58 m/s) were approximately as high as the model based on All feature set. Furthermore, splitting the data (200 Hz) in larger windows (256 timesteps) results in better performance of the model than smaller windows (128 timesteps) regardless of the regression method.
+
+%\subsection{Comparison of machine learning algorithms}
+Similar to the performance comparison of the feature sets, the differences between performances of models based on \gls{svm}, \gls{gpr}, and random forest methods were insignificant. Nonetheless, considering the small differences, the best machine learning method in terms of accuracy was the random forest method. Conversely, models based on decision tree and \gls{gbt} methods had the worst performance among the ML techniques used in this study.
+
+%\subsection{Comparison of gait types}
+As shown in Table \ref{resultsperrgait}, the \gls{rmse} and normalized \gls{rmse} increased and decreased respectively as the model estimated the faster gaits. The lowest \gls{rmse} (0.20 m/s) was obtained during walk, which was lower than the total \gls{rmse} (0.25 m/s). During pace, the model was indicated the lowest normalized \gls{rmse} (4.12\%) among other gaits.
+
+\input{../tables/gait.tex}
+
+
+\subsection{Model validation}
+In total, 3600 speed values were generated from the datasets, where 2150 and 1450 speed values were from walk (1.63 ± 0.13 m/s) and trot (3.12 ± 0.18 m/s) respectively. The best performing method for speed estimation, random forest with 256 timestep window size, was selected for the validation study. The validation results were reported in Table \ref{imumocap_table}. According to the \gls{rmse} equation, the measured speed was derived from \gls{omc}, while the estimated speed was computed using the trained models.
+
+\input{../tables/imumocap_table.tex}
+
+
+\subsection{Resource usage}
+
+The execution times of the models with 256 timestep windows were computed using the smartphone. The results presented in Table \ref{speedmodeltimes} are the time average of 1000 executions per model. decision tree and \gls{gbt} based models performed the fastest in all the four feature sets. Besides decision tree and \gls{gbt}, \gls{svm} and \gls{gpr} based models performed faster than random forest in a six features feature set, however, they performed slower as the number of features increased, in contrast to random forest.  
+
+\input{../tables/time.tex}
+
+The execution time of models versus their \gls{mae} is plotted in Figure \ref{timevsaccra}. The execution times between some models were very large, therefore, the logarithmic value of times were presented. The first, second, third, and fourth dot from left for each color is representative of the accuracy and execution time value of the related model on six features (from All feature set), Right front limb, Sacrum/Right front limb, and All IMUs feature sets. As presented earlier in Table \ref{resultsallT} and Figure \ref{resultsallF},  random forest yielded the best, and decision tree and \gls{gbt} yielded the worst performances. On the contrary, the execution times of \gls{gbt} and decision tree models were shorter than other models.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.95\linewidth]{chapters/Speed/figures/Timevsaccuracy.png}
+\caption{Comparison of models performances in terms of logarithm of execution times and accuracies (\gls{mae}). The first, second, third, and fourth dot from left for each color is representative of the accuracy and execution time value of the related model on six features (from All feature set), Right front limb, Sacrum/Right front limb, and All IMUs feature sets.}
+\label{timevsaccra}
+\end{figure}

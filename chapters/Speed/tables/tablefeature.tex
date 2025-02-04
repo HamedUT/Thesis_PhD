@@ -1,0 +1,50 @@
+\begin{table}[htb] 
+    \centering
+    \caption{The highest ranked (first to sixth) selected features using \gls{sffs} based on random forest method (256 timesteps windows). In this table, L: Left and R: Right.}% Add 'table' caption
+\resizebox{\linewidth}{!}{%
+       \begin{tabular}[H]{lcccccc}
+    
+    \toprule
+    
+    \multicolumn{1}{l}{\textbf{Feature set}} & \multicolumn{6}{c}{\textbf{Feature rank}}\\
+    
+ \cmidrule(lr){2-7}
+    
+    & \multicolumn{1}{c}{\textbf{First}} & \multicolumn{1}{c}{\textbf{Second}} & \multicolumn{1}{c}{\textbf{Third}} & \multicolumn{1}{c}{\textbf{Fourth}} & \multicolumn{1}{c}{\textbf{Fifth}}& \multicolumn{1}{c}{\textbf{Sixth}}\\
+    
+        \midrule
+        
+    \multicolumn{1}{l}{All}  & \multicolumn{1}{c}{max\_gyr$_z$} & \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{mean\_gyro$_z$} & \multicolumn{1}{c}{p75\_gyr$_z$} & \multicolumn{1}{c}{{fft$_1$}\_acc$_x$} & \multicolumn{1}{c}{max\_acc$_x$} \\ [-0.1 em]
+    
+     & \multicolumn{1}{c}{(L hind)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(L front)} & \multicolumn{1}{c}{(withers)} & \multicolumn{1}{c}{(sacrum)} \\ [0.4 em]
+    
+    \multicolumn{1}{l}{Limbs} &  \multicolumn{1}{c}{max\_gyr$_z$} & \multicolumn{1}{c}{p75\_gyr$_z$} & \multicolumn{1}{c}{p25\_gyr$_z$} & \multicolumn{1}{c}{min\_gyr$_z$} & \multicolumn{1}{c}{p75\_gyr$_z$} & \multicolumn{1}{c}{p25\_gyr$_z$}\\ [-0.1 em]
+    
+      & \multicolumn{1}{c}{(L hind)} & \multicolumn{1}{c}{(L front)} & \multicolumn{1}{c}{(L hind)} & \multicolumn{1}{c}{(R hind)} & \multicolumn{1}{c}{(R hind)} & \multicolumn{1}{c}{(R front)}\\ [0.4 em]
+
+        \multicolumn{1}{l}{Sacrum+} &  \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{ent\_gyr$_z$} & \multicolumn{1}{c}{p75\_acc$_x$} & \multicolumn{1}{c}{ent\_acc$_z$} & \multicolumn{1}{c}{skw\_acc$_z$}\\ [-0.1 em]
+    
+ \multicolumn{1}{l}{Withers} &     \multicolumn{1}{c}{(withers)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(withers)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(sacrum)}\\ [0.4 em]
+    
+    \multicolumn{1}{l}{Sacrum+} &  \multicolumn{1}{c}{p25\_gyr$_z$} & \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{max\_acc$_x$} & \multicolumn{1}{c}{mean\_acc$_x$} & \multicolumn{1}{c}{sd\_gyr$_y$} & \multicolumn{1}{c}{sd\_gyr$_z$}\\ [-0.1 em]
+    
+        \multicolumn{1}{l}{R front}& \multicolumn{1}{c}{(R front)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(R front)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(sacrum)} & \multicolumn{1}{c}{(R front)}\\ [0.4 em]
+    
+    \multicolumn{1}{l}{Sacrum} &   \multicolumn{1}{c}{min\_acc$_z$} & \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{ent\_gyr$_z$} & \multicolumn{1}{c}{sd\_gyr$_x$} & \multicolumn{1}{c}{sd\_gyr$_y$} & \multicolumn{1}{c}{ent\_acc$_z$} \\ [0.4 em]
+    
+    \multicolumn{1}{l}{Withers} &  \multicolumn{1}{c}{sd\_acc$_z$} & \multicolumn{1}{c}{p75\_acc$_x$} & \multicolumn{1}{c}{sd\_acc$_x$} & \multicolumn{1}{c}{mean\_gyr$_z$} & \multicolumn{1}{c}{ent\_acc$_z$} & \multicolumn{1}{c}{sd\_gyr$_z$}\\ [0.4 em]
+    
+    \multicolumn{1}{l}{Poll} &  \multicolumn{1}{c}{{fft$_3$}\_acc$_z$} & \multicolumn{1}{c}{sd\_acc$_x$} & \multicolumn{1}{c}{sd\_gyr$_y$} & \multicolumn{1}{c}{ent\_acc$_z$} & \multicolumn{1}{c}{krt\_acc$_z$} & \multicolumn{1}{c}{ent\_acc$_x$}\\ [0.4 em]
+    
+     \multicolumn{1}{l}{R front} &  \multicolumn{1}{c}{p25\_gyr$_z$} & \multicolumn{1}{c}{max\_acc$_x$} & \multicolumn{1}{c}{sd\_gyr$_z$} & \multicolumn{1}{c}{mdn\_gyr$_z$} & \multicolumn{1}{c}{sd\_gyr$_y$} & \multicolumn{1}{c}{sd\_gyr$_x$}\\ [0.4 em]
+    
+     \multicolumn{1}{l}{L front} &  \multicolumn{1}{c}{p75\_gyr$_z$} & \multicolumn{1}{c}{max\_acc$_x$} & \multicolumn{1}{c}{sd\_gyr$_z$} & \multicolumn{1}{c}{sd\_acc$_y$} & \multicolumn{1}{c}{sd\_gyr$_y$} & \multicolumn{1}{c}{mdn\_gyr$_z$}\\ [0.4 em]
+    
+     \multicolumn{1}{l}{R hind} &  \multicolumn{1}{c}{min\_gyr$_z$} & \multicolumn{1}{c}{p75\_gyr$_z$} & \multicolumn{1}{c}{mdn\_acc$_x$} & \multicolumn{1}{c}{min\_acc$_x$} & \multicolumn{1}{c}{mean\_gyr$_x$} & \multicolumn{1}{c}{p75\_acc$_x$}\\ [0.4 em]
+    
+     \multicolumn{1}{l}{L hind} &  \multicolumn{1}{c}{max\_gyr$_z$} & \multicolumn{1}{c}{p25\_gyr$_z$} & \multicolumn{1}{c}{p75\_acc$_x$} & \multicolumn{1}{c}{mean\_gyr$_x$} & \multicolumn{1}{c}{min\_acc$_x$} & \multicolumn{1}{c}{p75\_acc$_y$}\\ [0.4 em]
+    
+        \bottomrule
+    \label{tablefeature}
+  \end{tabular}}
+\end{table}
